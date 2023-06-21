@@ -1,0 +1,29 @@
+ body {
+     font-family: 'Roboto', sans-serif;
+     background-color: #f7f7f7;
+ }
+
+ .navbar {
+     background: #2c3e50;
+     /* custom navbar color */
+     padding-left: 16px;
+     padding-right: 16px;
+ }
+
+ .navbar-brand {
+     color: #fff;
+     /* set the navbar brand text color to white */
+     font-size: 30px;
+     font-weight: bold;
+ }
+
+ .navbar-brand span {
+     color: #ff9800;
+     /* set the "Express" text color to orange */
+ }
+
+ .form-control {
+     box-shadow: none;
+     font-weight: normal;
+     font-size: 13px;
+ }
