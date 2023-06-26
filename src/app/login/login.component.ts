@@ -15,7 +15,7 @@ export class LoginComponent {
   
   constructor(private loginservice: LoginService,private router:Router) { }
   onFormSubmit() {
-   debugger
+ 
     this.loginservice.loginUser(this.model).subscribe(
       response => {
         console.log(response);

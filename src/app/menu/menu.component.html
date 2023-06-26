@@ -1,0 +1,25 @@
+<div class="bg-img">
+<div class="container text-center">
+    &nbsp;
+    <h1 class="Headingmenu">Our Menu</h1>
+    <h3 class="head_desc">Explore our great range of pizza recipes from the Kabul Express  pizza menu.</h3>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let item of menuData">
+            <div class="card">
+                <div class="imgBox">
+                    <img [src]="item.menuImage" alt="Menu Image" class="menu-image">
+                </div>
+                <div class="contentBox">
+                    <h3>{{ item.name }}</h3>
+                    <h2 class="price">Rs {{item.price }}</h2>
+                    <a href="/login" class="buy">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>

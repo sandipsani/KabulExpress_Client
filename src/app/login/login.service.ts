@@ -15,7 +15,7 @@ export class LoginService {
   }
 
   loginUser(login: login): Observable<any> {
-    debugger
+    
     return this.http.post<any>("https://localhost:7231/api/Authentication", login)
   }
   public isAuthenticated(): boolean {

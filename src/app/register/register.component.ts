@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { registerUser } from 'src/Model/register';
 import { RegisterService } from '../register.service';
 import Swal from 'sweetalert2';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 
 export class RegisterComponent {
 
-  constructor(private registerService: RegisterService) { }
+  constructor(private registerService: RegisterService, private router: Router) { }
   
   model:registerUser= new registerUser();
 
@@ -27,14 +28,17 @@ export class RegisterComponent {
           Swal.fire('Attention', response.status, 'error');
         }
       else{
-          Swal.fire('Congrates', 'You are registered Now you can login!', 'success');
+          Swal.fire('Congrates', 'You are registered ','success');
+        
+          this.router.navigate(['/verifyphone']);
+          
       }     
       },
       error => {
         console.log(error.error.isValid);
         if (error.error.isValid === false) {
        
-          debugger;
+      
           var errorMessage = error.error.validationMessages.join("<br>");
           Swal.fire('Attention', errorMessage, 'error');
          
