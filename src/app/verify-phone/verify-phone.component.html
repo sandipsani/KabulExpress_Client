@@ -1,20 +1,95 @@
-<div class="c-email">
-    <div class="c-email__header">
-        <h1 class="c-email__header__title">Phone Number Confirmation</h1>
-    </div>
-    <div class="c-email__content">
-        <p class="c-email__content__text text-title">
-            Enter your phone number in the field:
-        </p>
-        <div class="c-email__code">
-            <div class="c-email__code__input">
-                <input type="text" class="c-email__code__textbox" id="phone-number-input"
-                    placeholder="Enter your phone number">
+<head>
+    <style>
+        body {
+            background-color: rgb(196, 255, 226);
+            font-family: "Trirong", serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container h3 {
+            margin-top: 0;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .container input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .container input[type="tel"]:focus {
+            border-color: #0fd59f;
+        }
+
+        .container .btn-verify,
+        .container .btn-resend {
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            margin-left: 5px;
+        }
+
+        .container .btn-verify:hover,
+        .container .btn-resend:hover {
+            background-color: #ff9800;
+        }
+
+        .container .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>OTP Verification</h3>
+        <p>We have sent a verification code to your mobile number</p>
+        <form #otpForm="ngForm" (ngSubmit)="otpsubmit()">
+            <input type="tel" placeholder="Enter your OTP here" name="otp" [(ngModel)]="otp.otp" required>
+            <div class="button-container">
+                <button type="submit" class="btn-verify">Verify OTP</button>
+                <button type="button" class="btn-resend" (click)="resendOTP()">Resend OTP</button>
             </div>
-            <span class="c-email__code__text">123456</span>
-        </div>
-        <p class="c-email__content__text text-italic opacity-30 text-title mb-0">Verification code is valid only for 30
-            minutes</p>
+        </form>
     </div>
-    <div class="c-email__footer"></div>
-</div>
+</body>

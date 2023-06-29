@@ -1,0 +1,7 @@
+export class verifyphone {
+    otp:any
+
+    constructor() {
+       this.otp=null;
+    }
+}
