@@ -13,6 +13,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { MenuComponent } from './menu/menu.component';
 import { VerifyPhoneComponent } from './verify-phone/verify-phone.component';
 import { AboutComponent } from './about/about.component';
+import { EmailverificationComponent } from './emailverification/emailverification.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AboutComponent } from './about/about.component';
     LoginViaPhoneComponent,
     MenuComponent,
     VerifyPhoneComponent,
-    AboutComponent
+    AboutComponent,
+    EmailverificationComponent
  
   ],
   imports: [

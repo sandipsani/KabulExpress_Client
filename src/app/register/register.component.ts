@@ -17,31 +17,33 @@ export class RegisterComponent {
   model:registerUser= new registerUser();
 
   onFormSubmit() {
-    
+    debugger
+    sessionStorage.setItem("phoneNumber","+91" + this.model.phoneNumber)
     this.registerService.CreateUser(this.model).subscribe(
       response => {
-        // console.log(response.error.isValid);
-        // alert(response.error.isValid);
-       
         if(response.status!=null)
         {
           Swal.fire('Attention', response.status, 'error');
         }
-      else{
-          Swal.fire('Congrates', 'You are registered ','success');
-        
-          this.router.navigate(['/verifyphone']);
-          
+      else
+      {
+        debugger
+        Swal.fire('Congrates', 'You are registered ','success');
+        this.router.navigate(['/verifyphone']);
       }     
       },
       error => {
-        console.log(error.error.isValid);
-        if (error.error.isValid === false) {
-       
-      
-          var errorMessage = error.error.validationMessages.join("<br>");
-          Swal.fire('Attention', errorMessage, 'error');
-         
+        console.log(error.error);
+        if (error.error === "User with email already exists") {
+          debugger;
+          Swal.fire('Attention', error.error, 'error');         
+        }
+        else if (error.error ==="User with phone already exists")
+        {
+          Swal.fire('Attention', error.error, 'error');
+        }
+        else{
+          Swal.fire('Attention', 'Something Went Wrong', 'error');
         }
        
       }

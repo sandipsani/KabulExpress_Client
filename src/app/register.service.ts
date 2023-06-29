@@ -15,6 +15,6 @@ export class RegisterService {
 
   CreateUser(register: registerUser): Observable<any> {
     
-    return this.http.post<any>("https://localhost:7231/api/Register/AddUser", register)
+    return this.http.post<any>("https://localhost:7231/api/v1/Register", register)
   }
 }
