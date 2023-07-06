@@ -18,30 +18,49 @@ export class VerifyPhoneComponent {
   otp: verifyotp = new verifyotp();
   inputnumber: resendOtp=new resendOtp();
   _phoneNumber:any;
+  isverifyviaphone : any; 
 
   otpsubmit() {
     debugger
     this._phoneNumber=  sessionStorage.getItem("phoneNumber")
     this.otp.phoneNumber = this._phoneNumber;
-    this.verifyphone.VerifyOtp(this.otp).subscribe(
-      (response)=>{
-        debugger
-        if(response===true)
-        {
-          Swal.fire('', 'Thank you for confirming your number now you can login plaese check your email we have sent email confirmation link ', 'success');
-          // this.router.navigate(['/login']);
-        }
-       if(response===false)
-       {
-         Swal.fire('', 'Fail to verify', 'error');
-       }
-       
-      },
-      (error)=>{
-        console.log(error);
-      }
-    )
 
+    this.isverifyviaphone = sessionStorage.getItem("verifyviaphone");
+
+
+    if (this.isverifyviaphone===false) 
+    {
+      debugger
+      this.verifyphone.VerifyOtp(this.otp).subscribe(
+        (response) => {
+          debugger;
+          if (response === true) {
+            Swal.fire('', 'Thank you for confirming your number. Now you can login. Please check your email, we have sent an email confirmation link.', 'success');
+            // this.router.navigate(['/login']);
+          }
+          if (response === false) {
+            Swal.fire('', 'Failed to verify', 'error');
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    } else
+    {
+      this.verifyphone.verifyviaphone(this.otp).subscribe(
+        (response) => {
+          debugger;
+          console.log(response);
+          localStorage.setItem("currentUser", JSON.stringify(response)); 
+          this.router.navigate(['/home']);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+
+    }
   }
  resendOTP()
  {

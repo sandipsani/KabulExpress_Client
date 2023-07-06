@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { VerifyPhoneComponent } from './verify-phone/verify-phone.component';
 import { AboutComponent } from './about/about.component';
 import { EmailverificationComponent } from './emailverification/emailverification.component';
+import { LoginViaPhoneVerificationComponent } from './login-via-phone-verification/login-via-phone-verification.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { EmailverificationComponent } from './emailverification/emailverificatio
     MenuComponent,
     VerifyPhoneComponent,
     AboutComponent,
-    EmailverificationComponent
+    EmailverificationComponent,
+    LoginViaPhoneVerificationComponent
  
   ],
   imports: [

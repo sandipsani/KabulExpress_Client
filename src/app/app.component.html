@@ -35,22 +35,32 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact Us</a>
+         
         </li>
+
+
         <li class="nav-item">
-          <a class="nav-link" routerLink="register">Register</a>
+          <a class="nav-link" *ngIf="!isLoggedIn()" routerLink="register">Register</a>
         </li>
+       
         <li class="nav-item">
-          <a class="nav-link" routerLink="login">Login</a>
+          <a class="nav-link" *ngIf="!isLoggedIn()" routerLink="login">Login</a>
+          <a class="nav-link" *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
+
         </li>
+        <!-- Display the user profile image -->
+        <div *ngIf="this.loginService.imgUrl" class="profile-pic">
+          <img [src]="this.loginService.imgUrl" alt="User Profile">
+  
+        </div>
       </ul>
     
     </div>
   
   </nav>
 </body>
-  <div>
+
     <router-outlet></router-outlet>
-  </div>
 
 
 
