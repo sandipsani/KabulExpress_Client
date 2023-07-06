@@ -9,7 +9,7 @@ export class JwtInterceptorService implements HttpInterceptor {
 
   constructor() { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-  
+  debugger
     var currentUser={token:""};
     var currentUserSession = localStorage.getItem('currentUser');
     
@@ -17,7 +17,7 @@ export class JwtInterceptorService implements HttpInterceptor {
     if(currentUserSession!=null)
     {  
         currentUser=JSON.parse(currentUserSession);
-      }
+    }
     request = request.clone({
       setHeaders: {
         Authorization: "Bearer " + currentUser.token 

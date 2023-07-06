@@ -9,6 +9,7 @@ import { CanactivategaurdService } from './canactivategaurd.service';
 import { MenuComponent } from './menu/menu.component';
 import { VerifyPhoneComponent } from './verify-phone/verify-phone.component';
 import { EmailverificationComponent } from './emailverification/emailverification.component';
+import { LoginViaPhoneVerificationComponent } from './login-via-phone-verification/login-via-phone-verification.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'loginviaphone', component: LoginViaPhoneComponent },
   { path: '', redirectTo:'home', pathMatch:'full' },
   { path: 'emailverification', component: EmailverificationComponent },
+  { path: 'loginviaphoneverification', component: LoginViaPhoneVerificationComponent },
 ];
 
 @NgModule({
