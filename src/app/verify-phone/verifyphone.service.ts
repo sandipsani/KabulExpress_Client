@@ -12,7 +12,6 @@ export class VerifyphoneService {
 
   constructor(private http: HttpClient, private jwthelperservice:JwtHelperService) { }
 
-
   VerifyOtp(otp:verifyotp): Observable<any> {
     debugger
     return this.http.post<any>("https://localhost:7231/api/v1/Register/Verify",otp);
