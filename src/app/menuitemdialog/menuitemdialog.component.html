@@ -1,0 +1,64 @@
+<mat-toolbar [ngStyle]="{'background-color': '#fe9a2a', 'color': 'white'}">
+    <span>Add Menu Item</span>
+    <!-- <span>{{ headingTitle }}</span> -->
+    <span class="demo-toolbar"></span>
+</mat-toolbar>
+
+<mat-card class="mat-mdc-dialog-surface.mdc-dialog__surface">
+    <!-- Title of a Card -->
+    <mat-card-content>
+        <form  >
+            <table>
+                <div class="form-group">
+                    <input hidden matInput placeholder="Name" id="id" name="id" formControlName="id">
+                    <input hidden matInput placeholder="Name" id="editimage" name="id" formControlName="editimage">
+                    <tr>
+                        <td>
+                            <mat-form-field class="demo-full-width">
+                                <input matInput placeholder="Name" id="name" name="name" formControlName="name">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </div>
+                <div class="form-group">
+                    <tr>
+                        <td>
+                            <mat-form-field class="demo-full-width">
+                                <input matInput placeholder="Title" id="title" name="title" formControlName="title">
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </div>
+
+                <div class="form-group">
+                    <tr>
+                        <td colspan="2">
+                            <mat-form-field class="demo-full-width">
+                                <textarea matInput placeholder="Description" matTextareaAutosize matAutosizeMinRows="2"
+                                    matAutosizeMaxRows="4" id="description" name="description"
+                                    formControlName="description"></textarea>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </div>
+                <div class="form-group">
+                    <tr>
+                        <td colspan="2">
+                            <input type="file" name="file" class="form-control" >
+                        </td>
+                    </tr>
+                </div>
+                <br>
+                <tr>
+                    <td colspan="2" class="content-center">
+                        <button mat-raised-button [ngStyle]="{'background-color': '#fe9a2a', 'color': 'white'}"
+                            type="submit">Submit</button>&nbsp;
+                        <button mat-raised-button color="accent" type="button"
+                           >Clear</button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </mat-card-content>
+</mat-card>

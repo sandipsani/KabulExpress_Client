@@ -1,0 +1,29 @@
+.mat-mdc-dialog-surface.mdc-dialog__surface {
+    overflow: initial;
+}
+
+.passport-size-image-container {
+    margin-left: 60%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.passport-size-image {
+    width: 199px;
+    height: 200px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-top: -153%;
+    margin-right: 30%;
+    border-radius: 20%;
+}
+
+.mdc-card__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 52px;
+    padding: 27px;
+}

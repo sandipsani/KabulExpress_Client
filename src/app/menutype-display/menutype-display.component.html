@@ -1,0 +1,45 @@
+
+<section class="main-content">
+    <div class="container-fluid">
+        <h1 class="text-center text-uppercase custom-heading">Our Menu Items</h1>
+        <br>
+        <br>
+    <div class="row justify-content-center negative-margin">
+            <div class="col-sm-6 col-md-6 col-lg-3"  *ngFor="let menuType of menuTypes">
+                <div class="food-card">
+                    <div class="food-card_img">
+                        <img [src]="menuType.typeImgUrl" alt="">
+                        <a href="#!"><i class="far fa-heart"></i></a>
+                    </div>
+                    <div class="food-card_content">
+                        <div class="food-card_title-section">
+                            <a href="#!" class="food-card_title">{{ menuType.typeName }}</a>
+                            <a href="#!" class="food-card_author">{{ menuType.title }}</a>
+                        </div>
+                        <div class="food-card_bottom-section">
+                            <div class="space-between">
+                                <div>
+                                    <span class="fa fa-fire"></span> About: {{ menuType.description }}
+                                </div>
+                                <div class="pull-right">
+                                    <span class="badge badge-success">{{ menuType.type }}</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="space-between">
+                                <div class="food-card_price">
+                                    <span>{{ menuType.price }}</span>
+                                </div>
+                        <div class="food-card_view-all-deals">
+                            <button class="btn btn-success btn-block" type="button">View All Deals</button>
+                        </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>

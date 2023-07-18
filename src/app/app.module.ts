@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { LoginViaPhoneComponent } from './login-via-phone/login-via-phone.component';
 import { JwtInterceptorService } from './jwt-interceptor.service';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -15,6 +15,15 @@ import { VerifyPhoneComponent } from './verify-phone/verify-phone.component';
 import { AboutComponent } from './about/about.component';
 import { EmailverificationComponent } from './emailverification/emailverification.component';
 import { LoginViaPhoneVerificationComponent } from './login-via-phone-verification/login-via-phone-verification.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AddmenuComponent } from './addmenu/addmenu.component';
+import { MaterialModule } from './material/material.module';
+import { MenutypeComponent } from './menutype/menutype.component';
+import { MenuTypeDialogComponent } from './menu-type-dialog/menu-type-dialog.component';
+import { MenutypeDisplayComponent } from './menutype-display/menutype-display.component';
+import { MenuitemComponent } from './menuitem/menuitem.component';
+import { MenuitemdialogComponent } from './menuitemdialog/menuitemdialog.component';
 
 
 @NgModule({
@@ -28,8 +37,16 @@ import { LoginViaPhoneVerificationComponent } from './login-via-phone-verificati
     VerifyPhoneComponent,
     AboutComponent,
     EmailverificationComponent,
-    LoginViaPhoneVerificationComponent
- 
+    LoginViaPhoneVerificationComponent,
+    ForgotpasswordComponent,
+    ResetPasswordComponent,
+    AddmenuComponent,
+    MenutypeComponent,
+    MenuTypeDialogComponent,
+    MenutypeDisplayComponent,
+    MenuitemComponent,
+    MenuitemdialogComponent
+
   ],
   imports: [
     JwtModule.forRoot({
@@ -43,15 +60,16 @@ import { LoginViaPhoneVerificationComponent } from './login-via-phone-verificati
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MaterialModule,
     FormsModule,
+    ReactiveFormsModule
     
-  ],
+    ],
   providers: [
   {provide:HTTP_INTERCEPTORS,
   useClass:JwtInterceptorService,
   multi:true
-  }
-
+  },
   ],
   bootstrap: [AppComponent]
 })
