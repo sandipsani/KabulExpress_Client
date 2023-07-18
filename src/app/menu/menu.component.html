@@ -1,25 +1,30 @@
-<div class="bg-img">
-<div class="container text-center">
-    &nbsp;
-    <h1 class="Headingmenu">Our Menu</h1>
-    <h3 class="head_desc">Explore our great range of pizza recipes from the Kabul Express  pizza menu.</h3>
 
+
+<body>
+    <br>
+    <br>
+<div id="header">
+    <h1>Our Menu</h1>
+    <p>The Traditional Fench Taste</p>
+</div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4" *ngFor="let item of menuData">
-            <div class="card">
-                <div class="imgBox">
-                    <img [src]="item.menuImage" alt="Menu Image" class="menu-image">
-                </div>
-                <div class="contentBox">
-                    <h3>{{ item.name }}</h3>
-                    <h2 class="price">Rs {{item.price }}</h2>
-                    <a href="/login" class="buy">Buy Now</a>
-                </div>
-            </div>
+    <div class="card">
+        <div class="card-image">
+            <img src="assets/images/image_3.jpg">
+        </div>
+        <div class="card-text">
+            <p class="card-meal-type">Burgers</p>
+            <h2 class="card-title">Délicieux Bénédicte</h2>
+            <p class="card-body">Eggs Benedict with hollandaise sauce, crispy bacon and an assortment of garden herbs.
+            </p>
+        </div>
+        <div class="card-price">
+            <a href="#" class="button">Check</a>
         </div>
     </div>
-    </div>
+ 
 </div>
-</div>
+</body>
+
+

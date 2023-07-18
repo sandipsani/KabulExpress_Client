@@ -10,6 +10,16 @@ import { MenuComponent } from './menu/menu.component';
 import { VerifyPhoneComponent } from './verify-phone/verify-phone.component';
 import { EmailverificationComponent } from './emailverification/emailverification.component';
 import { LoginViaPhoneVerificationComponent } from './login-via-phone-verification/login-via-phone-verification.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { resetPassword } from 'src/Model/resetPassword';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AddmenuComponent } from './addmenu/addmenu.component';
+import { MenutypeComponent } from './menutype/menutype.component';
+import { MenutypeDisplayComponent } from './menutype-display/menutype-display.component';
+import { MenuitemComponent } from './menuitem/menuitem.component';
+import { MenuitemdialogComponent } from './menuitemdialog/menuitemdialog.component';
+
+
 
 
 
@@ -26,6 +36,13 @@ const routes: Routes = [
   { path: '', redirectTo:'home', pathMatch:'full' },
   { path: 'emailverification', component: EmailverificationComponent },
   { path: 'loginviaphoneverification', component: LoginViaPhoneVerificationComponent },
+  { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'resetpassword', component: ResetPasswordComponent },
+  { path: 'addmenu', component: AddmenuComponent },
+  { path: 'menutype', component:MenutypeComponent },
+  { path: 'menutypedisplay', component: MenutypeDisplayComponent },
+  { path: 'menuitem', component: MenuitemComponent },
+  { path: 'menuitemdialog', component: MenuitemdialogComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,56 @@
+<br>
+<button mat-raised-button [ngStyle]="{'background-color': '#fe9a2a', 'color': 'white'}" (click)="openMenuType()">Menu
+    Type</button>
+
+<h2 class="text-primary"
+    style="font-weight: 1000; font-size: xx-large; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+    Menu Type Table
+    <img src="assets/images/mainlogo.png" alt="Your Image" style="width: 4%; height: 4%;">
+</h2>
+
+<div class="row">
+</div>
+<div>
+    <input type="text" class="search-input" [(ngModel)]="searchText" (input)="filterMenuTypes()"
+        placeholder="Search Menu Types">
+    <br>
+    <table class="fl-table ex1">
+        <thead>
+            <tr>
+                <th>Menu Type Name</th>
+                <th>Menu Title</th>
+                <th>Menu Description</th>
+                <th>Menu TypeImage</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let menuType of filteredMenuTypes; let commandIndex = index">
+                <td>{{ menuType.typeName }}</td>
+                <td>{{ menuType.title }}</td>
+                <td matTooltip="{{ menuType.description }}" [matTooltipPosition]="'above'">{{ menuType.description |
+                    slice:0:15 }}
+                    <span *ngIf="menuType.description.length > 15">...</span>
+                </td>
+                <td>
+                    <div class="image-container">
+                        <img [src]="menuType.typeImgUrl" class="passport-size-image" alt="Menu Type Image">
+                    </div>
+                </td>
+                <td>
+                    <a data-target="#editModal" data-toggle="modal" class="btn btn-outline-success p-1 m-2"
+                        (click)="editMenuType(menuType.id, commandIndex)">
+                        <mat-icon>edit</mat-icon>
+                    </a>
+                    <a class="btn btn-outline-primary" (click)="DeleteMenu(menuType.id)">
+                        <mat-icon>delete</mat-icon>
+                    </a>
+                </td>
+            </tr>
+        <tr *ngIf="filteredMenuTypes.length === 0">
+            <td colspan="5" class="text-center no-items-found">No items found</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>

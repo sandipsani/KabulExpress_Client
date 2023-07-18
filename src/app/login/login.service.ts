@@ -31,7 +31,6 @@ export class LoginService {
 
   }
   public isAuthenticated(): boolean {
-    debugger
     if (this.jwthelperservice.isTokenExpired()) {
       return false;
     } else {

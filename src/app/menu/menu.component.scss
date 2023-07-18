@@ -1,144 +1,92 @@
-    @import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+*{
+  margin:0%;
+  padding:0%;
+  box-sizing:border-box;
+  font-family:'Playfair Display', serif;
+}
+body {
+    background-image: url('https://kabulstorage.blob.core.windows.net/kabulexpress/transparent.png');
+    background-size:auto;
+    background-position: right;
+    background-attachment: fixed;
+    margin-bottom: 0%;
+}
+#header{
+  margin:0px;
+}
+#header>h1{
+  text-align:center;
+  font-size:3rem;
+}
+#header>p{
+  text-align:center;
+  font-size:1.5rem;
+  font-style:italic;
+}
+.container{
+  width:100vw;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  padding:40px 20px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    /* add other styles as needed */
+}
+.card>div{
+  box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
+}
+.card-image{
+  width:400px;
+  height:250px;
+}
+.card-image>img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:bottom;
+}
+.card-text{
 
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: "Istok Web", sans-serif;
-    }
-
-    .bg-img {
-       
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url(../../assets/images/background.jpg);
-        background-size: cover;
-        min-height: 100vh;
-        padding: 0px 0px;
-      
-    }
-
-  .container {
-  padding-left: 0px;
-               padding-right: 0px;
-           }
-    .card {
-        position: relative;
-        width: 300px;
-        height: 300px;
-        background: #191919;
-        border-radius: 20px;
-        overflow: hidden;
-        margin: 10px;
-        margin-left: 0%;
-    }
-
-    .card::after {
-        content: "";
-        position: absolute;
-        top: -50%;
-        width: 100%;
-        height: 100%;
-        background: #ffce00;
-        transform: skewY(345deg);
-        transition: 0.5s;
-    }
-
-    .Headingmenu
-    {
-        font-family: "SharpSansSemiBold";
-            line-height: 1;
-            margin-bottom: 2%;
-    }
-    .head_desc
-    {
-        margin-bottom: 2%;
-        font-size: 0.9rem;
-        color: rgb(35, 31, 32);
-        font-family: "Open Sans", sans-serif;
-         font-weight: 400;
-    }
-    .card:hover::after {
-        top: -70%;
-        transform: skewY(390deg);
-    }
-
-    .card::before {
-        content: "CORSAIR";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        font-weight: 600;
-        font-size: 6em;
-        color: rgba(0, 0, 0, 0.1);
-    }
-
-    .card .imgBox {
-        position: relative;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 20px;
-        z-index: 1;
-    }
-
-    .card .imgBox img {
-        max-width: 100%;
-        transition: .5s;
-    }
-
-    .card:hover .imgBox img {
-        max-width: 50%;
-    }
-
-    .card .contentBox {
-        position: relative;
-        padding: 5  px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        z-index: 2;
-    }
-
-    .card .contentBox h3 {
-        font-size: 18px;
-        color: white;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .card .contentBox .price {
-        font-size: 24px;
-        color: white;
-        font-weight: 700;
-        letter-spacing: 1px;
-    }
-
-    .card .contentBox .buy {
-        position: relative;
-        top: 100px;
-        opacity: 0;
-        padding: 10px 30px;
-        margin-top: 15px;
-        margin-left: 0%;
-        color: #000000;
-        text-decoration: none;
-        background: #ffce00;
-        border-radius: 30px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: 0.5s;
-    }
-
-    .card:hover .contentBox .buy {
-        top: 0;
-        opacity: 1;
-    }
-
-    .mouse {
-        height: 300px;
-        width: auto;
-    }
+  margin:-30px auto;
+  margin-bottom:-50px;
+  height:300px;
+  width:300px;
+  background-color:#1D1C20;
+  color:#fff;
+  padding:20px;
+}
+.card-meal-type{
+  font-style:italic;
+}
+.card-title{
+  font-size:2.2rem;
+  margin-bottom:20px;
+  margin-top:5px;
+}
+.card-body{
+font-size: 1.05rem;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: #333;
+    text-decoration: none;
+    /* add other button styles as needed */
+}
+@media (min-width: 1200px) 
+{
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+    max-width: 1500px;
+    margin-bottom: 0%;
+}
+}
