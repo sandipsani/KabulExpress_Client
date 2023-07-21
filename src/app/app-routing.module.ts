@@ -18,6 +18,9 @@ import { MenutypeComponent } from './menutype/menutype.component';
 import { MenutypeDisplayComponent } from './menutype-display/menutype-display.component';
 import { MenuitemComponent } from './menuitem/menuitem.component';
 import { MenuitemdialogComponent } from './menuitemdialog/menuitemdialog.component';
+import { MenuItemUserComponent } from './menu-item-user/menu-item-user.component';
+
+
 
 
 
@@ -39,10 +42,12 @@ const routes: Routes = [
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'resetpassword', component: ResetPasswordComponent },
   { path: 'addmenu', component: AddmenuComponent },
-  { path: 'menutype', component:MenutypeComponent },
+  { path: 'menutype', component: MenutypeComponent},
   { path: 'menutypedisplay', component: MenutypeDisplayComponent },
   { path: 'menuitem', component: MenuitemComponent },
-  { path: 'menuitemdialog', component: MenuitemdialogComponent }
+  { path: 'menuitemdialog', component: MenuitemdialogComponent },
+  { path: 'menuitemuser', component: MenuItemUserComponent }
+  
 ];
 
 @NgModule({

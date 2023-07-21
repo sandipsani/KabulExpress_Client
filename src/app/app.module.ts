@@ -24,6 +24,9 @@ import { MenuTypeDialogComponent } from './menu-type-dialog/menu-type-dialog.com
 import { MenutypeDisplayComponent } from './menutype-display/menutype-display.component';
 import { MenuitemComponent } from './menuitem/menuitem.component';
 import { MenuitemdialogComponent } from './menuitemdialog/menuitemdialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuItemUserComponent } from './menu-item-user/menu-item-user.component';
+import { SharedService } from './sharedservice/shared.service';
 
 
 @NgModule({
@@ -45,7 +48,9 @@ import { MenuitemdialogComponent } from './menuitemdialog/menuitemdialog.compone
     MenuTypeDialogComponent,
     MenutypeDisplayComponent,
     MenuitemComponent,
-    MenuitemdialogComponent
+    MenuitemdialogComponent,
+    MenuItemUserComponent,
+    
 
   ],
   imports: [
@@ -62,7 +67,8 @@ import { MenuitemdialogComponent } from './menuitemdialog/menuitemdialog.compone
     HttpClientModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   BrowserAnimationsModule
     
     ],
   providers: [
@@ -70,7 +76,9 @@ import { MenuitemdialogComponent } from './menuitemdialog/menuitemdialog.compone
   useClass:JwtInterceptorService,
   multi:true
   },
+   SharedService, // Add the SharedService to the providers array
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

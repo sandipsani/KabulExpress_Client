@@ -62,6 +62,7 @@ export class MenuTypeDialogComponent implements OnInit {
     //Add Case Menu Type
     if (this.menuTypeform.value.id==null) 
     {
+      debugger
       const formData = new FormData();
       formData.append('TypeName', this.menuTypeform.value.name);
       formData.append('TypeImgUrl', this.menuTypeform.value.fileSource);

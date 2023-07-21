@@ -1,0 +1,21 @@
+<body>
+    <h1 class="menu-heading">Our Menu</h1>
+    <br>
+    <br>
+    <div class="card-container">
+        <div class="col-sm-6 col-md-6 col-lg-3" *ngFor="let menuItem of menuItems">
+            <div class="card"> <span class="offer">New Arrivals</span>
+                <div class="item-image"> <img [src]="menuItem.menuItemImage" alt=""> </div>
+                <div class="item-content">
+                    <h3>{{ menuItem.menuItemName }}</h3>
+                    <p>{{ menuItem.menuItemDescription }}</p>
+                    <div class="item-price"> <span><i class="fa fa-inr" aria-hidden="true"></i> {{ menuItem.menuItemPrice }}</span>
+                        <button class="add-to-cart-button custom-add-to-cart">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
