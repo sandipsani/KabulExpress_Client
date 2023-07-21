@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MenuTypeDialogComponent } from '../menu-type-dialog/menu-type-dialog.component';
 import { MenutypemenuTypeDialogService } from './menutypemenu-type-dialog.service';
-
 import { Location } from '@angular/common';
 import { menutype } from 'src/Model/menutype';
 import { MenutypeService } from '../menu-type-dialog/menutype.service';
@@ -20,7 +19,7 @@ export class MenutypeComponent implements OnInit {
   searchText: string = '';
   headingTitle: string='';
 
-  constructor(private location :Location, public dialog: MatDialog, private router: Router,private menutypedialogservice: MenutypemenuTypeDialogService,private menutypeservice:MenutypeService) { }
+  constructor( private location :Location, public dialog: MatDialog, private router: Router,private menutypedialogservice: MenutypemenuTypeDialogService,private menutypeservice:MenutypeService) { }
 
   ngOnInit(): void {
     this.getAllMenuTypes();
@@ -67,16 +66,7 @@ export class MenutypeComponent implements OnInit {
       }
     );
   }
-  // openMenuTypeEdit() {
-  //   const dialogRef = this.dialog.open(MenuTypeDialogComponent, {
-  //     height: '600px',
-  //     width: '600px',
-  //     data: {}
-  //   });
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     this.getAllMenuTypes();
-  //   });
-  // }
+
   filterMenuTypes() {
     if (this.searchText.trim() === '') {
       this.filteredMenuTypes = this.menuTypes;

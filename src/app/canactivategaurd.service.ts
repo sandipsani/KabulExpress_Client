@@ -12,11 +12,10 @@ export class CanactivategaurdService {
 
   constructor(private loginservice :LoginService,private router :Router,private jwthelperservice: JwtHelperService,private verifyviaphone:VerifyphoneService) { }
 
-  canActivate(route:ActivatedRouteSnapshot):boolean
-  {
-    var token = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')as string).token:null;
-    if(this.loginservice.isAuthenticated())
-    {
+  canActivate(route: ActivatedRouteSnapshot): boolean {
+    var token = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser') as string).token : null;
+
+    if (this.loginservice.isAuthenticated()) {
       return true;
     }
     if (this.verifyviaphone.isAuthenticated()) {
@@ -27,4 +26,5 @@ export class CanactivategaurdService {
       return false;
     }
   }
+
 }

@@ -1,21 +1,22 @@
 <mat-toolbar [ngStyle]="{'background-color': '#fe9a2a', 'color': 'white'}">
-    <span>Add Menu Item</span>
-    <!-- <span>{{ headingTitle }}</span> -->
+    <!-- <span>Add Menu Item</span> -->
+    <span>{{ headingTitle }}</span>
     <span class="demo-toolbar"></span>
 </mat-toolbar>
 
-<mat-card class="mat-mdc-dialog-surface.mdc-dialog__surface">
+<mat-card >
     <!-- Title of a Card -->
     <mat-card-content>
-        <form  >
+        <form [formGroup]="menuItemform" (ngSubmit)="submit()" >
             <table>
                 <div class="form-group">
                     <input hidden matInput placeholder="Name" id="id" name="id" formControlName="id">
-                    <input hidden matInput placeholder="Name" id="editimage" name="id" formControlName="editimage">
+                    
                     <tr>
                         <td>
                             <mat-form-field class="demo-full-width">
                                 <input matInput placeholder="Name" id="name" name="name" formControlName="name">
+                                
                             </mat-form-field>
                         </td>
                     </tr>
@@ -24,12 +25,13 @@
                     <tr>
                         <td>
                             <mat-form-field class="demo-full-width">
-                                <input matInput placeholder="Title" id="title" name="title" formControlName="title">
+                                <input matInput placeholder="price" id="price" name="price" formControlName="price">
                             </mat-form-field>
                         </td>
                     </tr>
                 </div>
 
+                
                 <div class="form-group">
                     <tr>
                         <td colspan="2">
@@ -44,11 +46,27 @@
                 <div class="form-group">
                     <tr>
                         <td colspan="2">
-                            <input type="file" name="file" class="form-control" >
+                            <input type="file" name="file" class="form-control" (change)="onFileChange($event)">
                         </td>
                     </tr>
                 </div>
+             <div class="form-group">
+                   <br>
+                    <tr>
+                        <td colspan="2" class="content-center">
+                            <mat-form-field>
+                                <mat-label>Select Menu Type</mat-label>
+                                <mat-select formControlName="dropdown"  formControlName="menutype">
+                                    <mat-option *ngFor="let menuType of menuTypes" [value]="menuType.id">{{ menuType.typeName
+                                        }}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+
+       
                 <br>
+                    </div>
                 <tr>
                     <td colspan="2" class="content-center">
                         <button mat-raised-button [ngStyle]="{'background-color': '#fe9a2a', 'color': 'white'}"
